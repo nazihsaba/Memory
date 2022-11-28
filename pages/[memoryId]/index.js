@@ -34,7 +34,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false,
+    fallback: 'blocking',
     paths: memories.map((memory) => ({
       params: { memoryId: memory._id.toString() },
     })),
